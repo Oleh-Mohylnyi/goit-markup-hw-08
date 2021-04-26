@@ -1,0 +1,46 @@
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.clients__card {
+  width: calc(
+    (1170px - var(--grid-column-clients) * 30px) / var(--grid-column-clients)
+  );
+}
+
+.clients__icon {
+  fill: $border-icon-color;
+  transition: fill $transition-duration $timing-function,
+    border $transition-duration $timing-function;
+}
+
+.clients__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(
+    (1200px - var(--grid-column-clients) * 30px) / var(--grid-column-clients)
+  );
+  height: 90px;
+  background-color: $bg-color;
+  border: 1px solid $border-icon-color;
+  border-radius: 4px;
+  transition: fill $transition-duration $timing-function,
+    border $transition-duration $timing-function;
+}
+
+.clients__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clients__link:focus .clients__icon,
+.clients__link:hover .clients__icon {
+  fill: $accent-color;
+}
+
+.clients__link:focus,
+.clients__link:hover {
+  border: 1px solid $accent-color;
+}

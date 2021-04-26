@@ -1,0 +1,29 @@
+.practice__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -30px;
+  padding-bottom: 94px;
+}
+
+.practice__item {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 30px;
+  flex-basis: calc((100% - var(--grid-column) * 30px) / var(--grid-column));
+}
+
+.practice__subtitle {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $bg-color;
+  background-color: $bg-practice-subtitle-color;
+}
