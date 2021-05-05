@@ -1,36 +1,91 @@
 .header {
   border-bottom: 1px solid $border-header-color;
+  position: relative;
 }
 
 .header__container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  height: 60px;
+
+  @media screen and (min-width: 768px) {
+    height: 80px;
+  }
 }
 
-.navigation {
+.heder__logo-container {
+  width: 134px;
+
+  @media screen and (max-width: 1140px) {
+    width: 145px;
+  }
+}
+
+.header__menu {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+
+    &.is-open {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      // overflow: hidden;
+      padding-left: 40px;
+      padding-top: 48px;
+      padding-bottom: 48px;
+      background-color: $bg-color;
+    }
+  }
+
+  // @media screen and (min-width: 768px) {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+  // }
 }
 
 .navigation__list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 294px;
-  margin-left: 93px;
+  // display: block;
+  // margin-right: auto;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 294px;
+    margin-right: 84px;
+  }
+
+  @media screen and (min-width: 1140px) {
+    margin-right: 305px;
+  }
 }
 
 .navigation__link {
-  position: relative;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  display: block;
+  font-size: 40px;
+  line-height: 1.18;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
   letter-spacing: 0.02em;
   color: $text-main-color;
-  transition: color 250ms $timing-function;
+  transition: color $transition-duration $timing-function;
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.14;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 
   &:hover,
   &:focus {
@@ -38,38 +93,67 @@
   }
 }
 
-.navigation__link--current {
-  color: $accent-color;
+// .navigation__item {
+// display: block;
+// padding-bottom: 32px;
+// }
 
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 4px;
-    bottom: 0;
-    border-radius: 2px;
-    background-color: $accent-color;
-    transition: background-color 250ms $timing-function;
+.navigation__link--current {
+  @media screen and (min-width: 768px) {
+    color: $accent-color;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 4px;
+      bottom: 0;
+      border-radius: 2px;
+      background-color: $accent-color;
+      transition: background-color $transition-duration $timing-function;
+    }
   }
 }
 
 .contacts {
-  display: flex;
-  align-items: center;
+  display: block;
+
+  @media screen and (min-width: 1140px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
-.contacts__item:not(:last-child) {
-  margin-right: 50px;
+.contacts__item {
+  &:not(:last-child) {
+    margin-right: 50px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 10px;
+    }
+    @media screen and (min-width: 1140px) {
+      margin-bottom: 0px;
+    }
+  }
 }
 
 .contacts__link {
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
+  font-size: 34px;
+  line-height: 1.18;
   letter-spacing: 0.02em;
   color: $text-second-color;
-  transition: color 250ms $timing-function;
+  transition: color $transition-duration $timing-function;
+
+  @media screen and (max-width: 767px) {
+    padding-bottom: 32px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.14;
+  }
 
   &:hover,
   &:focus {
@@ -77,10 +161,15 @@
   }
 }
 
+// .contacts__link .contacts__icon--smartphone {
+//   font-size: 24px;
+//   line-height: 1.17;
+// }
+
 %contacts__icon {
   margin-right: 10px;
   fill: currentColor;
-  transition: fill 250ms $timing-function;
+  transition: fill $transition-duration $timing-function;
 }
 
 .contacts__icon--envelope {

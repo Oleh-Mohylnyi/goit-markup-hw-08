@@ -1,11 +1,12 @@
 .clients {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 
-  @media screen and (min-width: 1200px) {
-    padding-top: 94px;
-    padding-bottom: 94px;
-  }
+.clients__card {
+  width: calc(
+    (1170px - var(--grid-column-clients) * 30px) / var(--grid-column-clients)
+  );
 }
 
 .clients__icon {
@@ -14,27 +15,13 @@
     border $transition-duration $timing-function;
 }
 
-.clients__item {
-  margin-top: 30px;
-  margin-left: 30px;
-  --grid-column-clients: 2;
-  width: calc(
-    (100% - var(--grid-column-clients) * 30px) / var(--grid-column-clients)
-  );
-
-  @media screen and (min-width: 768px) {
-    --grid-column-clients: 3;
-  }
-
-  @media screen and (min-width: 1200px) {
-    --grid-column-clients: 6;
-  }
-}
-
 .clients__link {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: calc(
+    (1200px - var(--grid-column-clients) * 30px) / var(--grid-column-clients)
+  );
   height: 90px;
   background-color: $bg-color;
   border: 1px solid $border-icon-color;
@@ -45,9 +32,7 @@
 
 .clients__list {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: -30px;
-  margin-left: -30px;
+  justify-content: space-between;
 }
 
 .clients__link:focus .clients__icon,

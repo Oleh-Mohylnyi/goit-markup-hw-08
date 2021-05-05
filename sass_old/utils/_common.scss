@@ -6,7 +6,6 @@ html {
 *::after,
 *::before {
   box-sizing: inherit;
-  // outline: 1px solid tomato;
 }
 
 h1,
@@ -22,7 +21,6 @@ body {
   font-family: $title-font, noto, segoe ui, arial;
   color: $text-main-color;
   background-color: $bg-color;
-  overflow: hidden;
 }
 
 img {
@@ -42,32 +40,17 @@ img {
 }
 
 .container {
-  width: 100%;
+  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-
-  @media screen and (max-width: 480px) {
-    min-width: 320px;
-  }
-
-  // @media screen and (max-width: 768px) {
-  // }
-
-  @media screen and (min-width: 1200px) {
-    width: 1200px;
-  }
 }
 
 .title {
   margin-bottom: 50px;
-  font-size: 28px;
+  font-size: 36px;
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
-
-  @media screen and (min-width: 1200px) {
-    font-size: 36px;
-  }
 }

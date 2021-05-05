@@ -12,46 +12,82 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
     <header class="header">
         <div class="container header__container">
-            <nav class="navigation">
-                <a href="./index.html" class="logo link">Web<span class="logo__text--dark">Studio</span></a>
-                <ul class="list navigation__list">
-                    <li class="navigation__item"><a class="link navigation__link navigation__link--current" href="./index.html">Студия</a>
+            <a href="./index.html" class="logo link">Web<span class="logo__text--dark">Studio</span></a>
+            <div class="header__menu" id="menu-container" data-menu>
+                <nav class="navigation">
+                    <ul class="navigation__list list">
+                        <li class="navigation__item"><a class="link navigation__link navigation__link--current" href="./index.html">Студия</a>
+                        </li>
+                        <li class="navigation__item"><a class="link navigation__link" href="./portfolio.html">Портфолио</a>
+                        </li>
+                        <li class="navigation__item"><a class="link navigation__link" href="">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="contacts list">
+                    <li class="contacts__item">
+                        <a class="link contacts__link" href="mailto:info@devstudio.com">
+                            <svg class="contacts__icon--envelope" width="14" height="10">
+                                <use href="./images/sprite.svg#icon-envelope"></use>
+                            </svg>
+                            info@devstudio.com
+                        </a>
                     </li>
-                    <li class="navigation__item"><a class="link navigation__link" href="./portfolio.html">Портфолио</a>
+                    <li class="contacts__item">
+                        <a class="link contacts__link" href="tel:+380961111111">
+                            <svg class="contacts__icon--smartphone" width="10" height="14">
+                                <use href="./images/sprite.svg#icon-smartphone"></use>
+                            </svg>+38 096 111 11 11</a>
                     </li>
-                    <li class="navigation__item"><a class="link navigation__link" href="">Контакты</a></li>
                 </ul>
-            </nav>
-            <ul class="list contacts">
-                <li class="contacts__item">
-                    <a class="link contacts__link" href="mailto:info@devstudio.com">
-                        <svg class="contacts__icon--envelope">
-                            <use href="./images/sprite.svg#icon-envelope"></use>
-                        </svg>
-                        info@devstudio.com
+            </div>
+            <button type="button" 
+            class="menu__button is-open"
+            aria-expanded="false"
+            aria-controls="menu-container"
+            data-menu-button>
+                <svg class="manu__icon" width="40" height="40">
+                    <use class="manu__icon--menu" href="./images/sprite.svg#icon-menu"></use>
+                    <use class="manu__icon--close" href="./images/sprite.svg#icon-close_menu"></use>
+                </svg>
+            </button>
+            <ul class="list menu__social-list">
+                <li class="menu__social-item">
+                    <a href="" class="link menu__social-link" target="_blank" rel="noopener noreferrer" aria-label="instagram">
+                        Instagram
                     </a>
                 </li>
-                <li class="contacts__item">
-                    <a class="link contacts__link" href="tel:+380961111111">
-                        <svg class="contacts__icon--smartphone">
-                            <use href="./images/sprite.svg#icon-smartphone"></use>
-                        </svg>+38 096 111 11 11</a>
+                <li class="menu__social-item">
+                    <a href="" class="link menu__social-ink" target="_blank" rel="noopener noreferrer" aria-label="twitter">
+                        Twitter
+                    </a>
+                </li>
+                <li class="menu__social-item">
+                    <a href="" class="link menu__social-link" target="_blank" rel="noopener noreferrer" aria-label="facebook">
+                        Facebook
+                    </a>
+                </li>
+                <li class="menu__social-item">
+                    <a href="" class="link menu__social-link" target="_blank" rel="noopener noreferrer" aria-label="linkedin">
+                        Linkedin
+                    </a>
                 </li>
             </ul>
+
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="container">
-                <h1 class="hero__title">Эффективные решения для вашего бизнеса</h1>
+            <div class="container hero-container">
+                <h1 class="hero__title">Эффективные решения <br>
+                    для вашего бизнеса</h1>
                 <button class="button" type="button" data-modal-open>Заказать услугу</button>
             </div>
         </section>
@@ -131,7 +167,7 @@
                 <h2 class="title">Наша команда</h2>
                 <ul class="list team__list">
                     <li class="item team__item">
-                        <img class="" src="./images/teamcard1.jpg"
+                        <img class="team__photo" src="./images/teamcard1.jpg"
                             alt="портрет Product Designer Игоря Демьяненко" width="270">
                         <div class="team__card">
                             <h3 class="team__subtitle ">Игорь Демьяненко</h3>
@@ -173,7 +209,7 @@
                         </div>
                     </li>
                     <li class="item team__item">
-                        <img class="" src="./images/teamcard2.jpg"
+                        <img class="team__photo" src="./images/teamcard2.jpg"
                             alt="портрет Frontend Developer Ольги Репиной" width="270">
                         <div class="team__card">
                             <h3 class="team__subtitle ">Ольга Репина</h3>
@@ -215,7 +251,7 @@
                         </div>
                     </li>
                     <li class="item team__item">
-                        <img class="" src="./images/teamcard3.jpg" alt="портрет Marketing Николая Тарасова"
+                        <img class="team__photo" src="./images/teamcard3.jpg" alt="портрет Marketing Николая Тарасова"
                             width="270">
                         <div class="team__card">
                             <h3 class="team__subtitle ">Николай Тарасов</h3>
@@ -257,7 +293,7 @@
                         </div>
                     </li>
                     <li class="item team__item">
-                        <img class="" src="./images/teamcard4.jpg" alt="портрет UI Designer Михаила Ермакова"
+                        <img class="team__photo" src="./images/teamcard4.jpg" alt="портрет UI Designer Михаила Ермакова"
                             width="270">
                         <div class="team__card">
                             <h3 class="team__subtitle ">Михаил Ермаков</h3>
@@ -352,7 +388,7 @@
             </div>
         </section>
 
-        <div class="backdrop backdrop--hidden" data-modal>
+        <!-- <div class="backdrop backdrop--hidden" data-modal>
             <div class="modal">
                 <button class="modal__close-button" type="button" data-modal-close>
                     <svg class="modal__close-img " width="18" height="18">
@@ -403,7 +439,7 @@
                     <button class="button form-order__submit" type="submit">Отправить</button>
                 </form>
             </div>
-        </div>
+        </div> -->
 
     </main>
 
@@ -465,7 +501,6 @@
             <section class="">
                 <h3 class="footer__subtitle">Подпишитесь на рассылку</h3>
                 <form class="form-subscribe">
-                    <!-- <label  for="mail-subscribe">Имя</label> -->
                     <input type="email" name="email-subscribe" class="form-subscribe__mail" id="mail-subscribe"
                         placeholder="E-mail">
                     <button class="button form-subscribe__button" type="submit">Подписаться
@@ -480,6 +515,7 @@
     </footer>
 
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>
