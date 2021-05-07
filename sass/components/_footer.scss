@@ -7,10 +7,11 @@
 .footer__container {
   display: block;
 
-  // @media and (min-width: 768px) {
-  //   display: flex;
-  //   justify-content: center;
-  // }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
 
 .footer__addresses {
@@ -18,14 +19,47 @@
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-  // width: calc(
-  //   (1200px - var(--grid-column-features) * 30px) / var(--grid-column-features)
-  // );
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    --grid-column-footer: 2;
+    flex-basis: calc(
+      (100% - var(--grid-column-footer) * 30px) / var(--grid-column-footer)
+    );
+  }
+  @media screen and (min-width: 1200px) {
+    --grid-column-footer: 4;
+    text-align: left;
+  }
+}
+
+.footer__social {
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    --grid-column-footer: 2;
+    flex-basis: calc(
+      (100% - var(--grid-column-footer) * 30px) / var(--grid-column-footer)
+    );
+  }
+  @media screen and (min-width: 1200px) {
+    --grid-column-footer: 4;
+  }
+}
+
+.social-list--footer {
+  @media screen and (min-width: 1200px) {
+    justify-content: start;
+  }
+}
+
+.footer__nav {
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 30px) / 2);
+  }
 }
 
 .addresses {
   padding-top: 20px;
-  width: 100%;
 }
 
 .addresses__item {
@@ -64,4 +98,24 @@
   color: $bg-color;
   margin-bottom: 20px;
   margin-top: 60px;
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 12px;
+    text-align: start;
+  }
+}
+
+.footer__subtitle--social {
+  @media screen and (min-width: 768px) {
+    margin-top: 5px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-top: 12px;
+  }
+}
+
+.footer__form {
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 30px) / 2);
+  }
 }

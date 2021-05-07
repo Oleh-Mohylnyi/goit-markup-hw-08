@@ -1,6 +1,11 @@
 .portfolio__section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 45px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .portfolio__title--visually-hidden {
@@ -16,7 +21,12 @@
 
 .filter__list {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .filter__button {
@@ -24,6 +34,7 @@
   min-height: 38px;
   padding-left: 22px;
   padding-right: 22px;
+  margin-top: 15px;
   border: 0;
   cursor: pointer;
   font-family: inherit;
@@ -46,8 +57,8 @@
   }
 }
 
-.filter__item + .filter__item {
-  margin-left: 8px;
+.filter__item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .portfolio__list {
@@ -56,12 +67,33 @@
   margin-left: -30px;
   margin-top: 20px;
   padding: 0;
+  justify-content: center;
 }
 
 .portfolio__card {
   margin-top: 30px;
   margin-left: 30px;
-  flex-basis: calc((100% - var(--grid-column) * 30px) / var(--grid-column));
+  // --grid-column: 1;
+  // flex-basis: calc((100% - var(--grid-column) * 30px) / var(--grid-column));
+  border: 1px solid $border-portfolio-color;
+  transition: box-shadow $transition-duration $timing-function;
+  width: 450px;
+
+  &:focus-within,
+  &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  @media screen and (min-width: 768px) {
+    // --grid-column: 2;
+    width: 354px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    // --grid-column: 3;
+    width: 370px;
+  }
 }
 
 .portfolio__label {
@@ -85,21 +117,14 @@
   color: $text-second-color;
 }
 
-.portfolio__card {
-  flex-basis: calc((100% - 30px * var(--grid-column)) / var(--grid-column));
-  border: 1px solid $border-portfolio-color;
-  transition: box-shadow $transition-duration $timing-function;
-
-  &:focus-within,
-  &:hover {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
-  }
-}
-
 .portfolio__thumb {
   position: relative;
   overflow: hidden;
+}
+
+.portfolio__img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .portfolio__overley {

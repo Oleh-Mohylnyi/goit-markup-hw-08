@@ -5,7 +5,7 @@
   margin-right: 15px;
   padding: 0;
   border: 0;
-  z-index: 5;
+  z-index: 9;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -44,16 +44,36 @@
   }
 }
 
-.menu__social-item {
-  display: block;
+.menu__social-list {
+  display: flex;
+}
 
+.menu__social-item {
+  position: relative;
+  margin-right: 20px;
+
+  &:not(:last-child) {
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 1px;
+      height: 100%;
+      right: -10px;
+      background-color: $border-input-color;
+      transition: background-color $transition-duration $timing-function;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.menu__social-link {
   font-weight: 500;
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.02em;
   color: $accent-color;
-
-  &:not(:last-child) {
-    border-right: 1px solid $border-input-color;
-  }
 }
