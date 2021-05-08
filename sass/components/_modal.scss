@@ -8,7 +8,6 @@
   opacity: 1;
   transition: opacity $transition-duration $timing-function;
   z-index: 10;
-  overflow-y: scroll;
 }
 
 .backdrop--hidden {
@@ -26,6 +25,7 @@
   height: 609px;
   background-color: $bg-color;
   border-radius: 4px;
+  overflow-y: scroll;
 
   @media screen and (min-width: 1200px) {
     width: 528px;
